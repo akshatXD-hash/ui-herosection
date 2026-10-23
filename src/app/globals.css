@@ -721,6 +721,30 @@ a:focus-visible {
     font-size: 8px;
   }
 }
+@media (min-width: 701px) and (max-width: 1000px) and (min-height: 850px) {
+  .car-travel {
+    width: 90%;
+    left: 3%;
+    bottom: 22%;
+  }
+  .scene-sun {
+    height: 63%;
+    left: 42%;
+    top: 18%;
+  }
+  .backdrop-type {
+    top: 17%;
+    font-size: 20vw;
+  }
+  .drive-button {
+    top: auto;
+    bottom: 10%;
+    right: 4%;
+  }
+  .car-caption {
+    bottom: 13%;
+  }
+}
 @media (max-width: 700px) {
   .hero-sticky {
     padding-inline: 5vw;
