@@ -87,7 +87,6 @@ export function DriveExperience() {
         if (root.current) animateStory(root.current);
         gsap
           .timeline({ defaults: { ease: "power3.out" } })
-          .from(".intro-eyebrow", { y: 12, opacity: 0, duration: 0.7 })
           .from(
             ".headline-letter",
             {
@@ -247,17 +246,10 @@ export function DriveExperience() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Under the hood <Arrow diagonal />
+              GitHub <Arrow diagonal />
             </a>
           </header>
           <div className="hero-heading">
-            <div className="intro-eyebrow flex items-center justify-between">
-              <p className="eyebrow flex items-center gap-2">
-                <span className="status-dot" /> A DIGITAL EXPERIENCE. BUILT TO
-                MOVE.
-              </p>
-              <span className="edition eyebrow">MOTION STUDY — 001 / 2026</span>
-            </div>
             <h1 aria-label="Welcome Itzfizz" className="hero-title">
               <span aria-hidden="true" className="headline-word">
                 {"WELCOME".split("").map((letter, index) => (
@@ -300,7 +292,6 @@ export function DriveExperience() {
           <div className="scene" ref={scene}>
             <div className="scene-topline scene-decoration">
               <span>TIMELESS FORM. FORWARD MOTION.</span>
-              <span>EST. IN THE PURSUIT OF BETTER</span>
             </div>
             <div className="scene-sun scene-decoration" aria-hidden="true" />
             <div className="backdrop-type scene-decoration" aria-hidden="true">
@@ -434,7 +425,7 @@ export function DriveExperience() {
       </section>
       <section id="story" className="story-section">
         <div className="story-top flex items-center justify-between">
-          <p className="eyebrow">02 / BEHIND THE MOTION</p>
+          <p className="eyebrow">THE DETAILS</p>
           <span className="story-star" aria-hidden="true">
             ✳
           </span>
@@ -451,14 +442,7 @@ export function DriveExperience() {
             </span>
           </h2>
           <div className="story-copy">
-            <p>
-              A familiar silhouette. An unexpected journey. A small exploration
-              of what happens when thoughtful design meets a little momentum.
-            </p>
-            <p>
-              Every movement follows your lead. Scroll forward, drift back, or
-              stop for a moment. You’re in the driver’s seat.
-            </p>
+            <p>A classic silhouette. A fresh perspective.</p>
             <button
               type="button"
               className="replay-button"
@@ -493,28 +477,16 @@ export function DriveExperience() {
               <div className="orbit-arm">
                 <span />
               </div>
-              <span className="graphic-caption">EVERY DETAIL, IN ORBIT</span>
             </div>
-            <span className="eyebrow">01 — INTENTION</span>
-            <h3>Nothing moves by accident.</h3>
-            <p>
-              A quiet entrance. A measured pace. Each detail gives the next one
-              room to breathe.
-            </p>
+            <h3>Precision</h3>
           </div>
           <div className="principle-card" data-motion="flow">
             <div className="principle-graphic flow-graphic" aria-hidden="true">
               {[0, 1, 2].map((index) => (
                 <Arrow className="flow-arrow" key={index} />
               ))}
-              <span className="graphic-caption">FIND YOUR FLOW</span>
             </div>
-            <span className="eyebrow">02 — CONNECTION</span>
-            <h3>You set the rhythm.</h3>
-            <p>
-              One continuous journey, connected to your scroll. Always fluid.
-              Always reversible.
-            </p>
+            <h3>Momentum</h3>
           </div>
           <div className="principle-card" data-motion="balance">
             <div
@@ -524,22 +496,13 @@ export function DriveExperience() {
               <span className="balance-bar" />
               <span className="balance-bar" />
               <span className="balance-bar" />
-              <span className="graphic-caption">ROOM FOR EVERY RHYTHM</span>
             </div>
-            <span className="eyebrow">03 — CONSIDERATION</span>
-            <h3>A good ride, for everyone.</h3>
-            <p>
-              Made for small screens, keyboard explorers, and those who prefer a
-              little less motion.
-            </p>
+            <h3>Balance</h3>
           </div>
         </div>
         <div className="project-note">
           <span className="status-dot" />
-          <p>
-            An independent frontend motion study. Statistics are illustrative
-            values from the assignment reference, not measured business results.
-          </p>
+          <p>Illustrative figures.</p>
         </div>
       </section>
       <footer className="site-footer flex items-center justify-between">
@@ -553,13 +516,13 @@ export function DriveExperience() {
             ✳
           </span>
         </a>
-        <p>DESIGN IN MOTION. © 2026</p>
+        <p>© 2026 ITZFIZZ</p>
         <a
           href="https://github.com/akshatXD-hash/ui-herosection"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Explore the source <Arrow diagonal />
+          Source <Arrow diagonal />
         </a>
       </footer>
     </main>
