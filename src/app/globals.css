@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Manrope Variable", Arial, sans-serif;
+}
+
+body { margin: 0; font-family: var(--font-sans); background: #f3f2eb; color: #252820; }
