@@ -27,6 +27,7 @@ Open http://127.0.0.1:3000. Fonts and the car image are served locally; there ar
 - Switch between **Day / Night** scenes.
 - Use **Pause motion** for a static experience, or enable your operating system's reduced-motion preference. This removes the extended scroll runway and disables the animation.
 - Follow **Behind the motion**, then use **Take it for another spin** to return to the beginning.
+- Keep scrolling below the hero: the story heading reveals line by line, oversized text moves in opposing directions, and the three principle illustrations respond to your scroll. These effects also respect motion-off and system reduced-motion preferences.
 
 ## Assignment coverage
 
@@ -84,6 +85,7 @@ The expected GitHub Pages URL after you deploy is `https://akshatXD-hash.github.
 ```text
 src/app/                       App Router page, metadata, favicon, global styles
 src/components/drive-experience.tsx  Scene, controls, and GSAP lifecycle
+src/lib/story-motion.ts         Scoped lower-section reveals and scroll illustrations
 public/car.webp                Optimized transparent hero asset
 assets/car-original.png        Original image source, excluded from the public bundle
 assets/README.md               Image provenance and generation prompt

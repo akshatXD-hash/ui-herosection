@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { animateStory } from "@/lib/story-motion";
 
 const metrics = [
   {
@@ -83,6 +84,7 @@ export function DriveExperience() {
       "(prefers-reduced-motion: no-preference)",
       () => {
         if (motionPaused) return;
+        if (root.current) animateStory(root.current);
         gsap
           .timeline({ defaults: { ease: "power3.out" } })
           .from(".intro-eyebrow", { y: 12, opacity: 0, duration: 0.7 })
@@ -438,10 +440,15 @@ export function DriveExperience() {
           </span>
         </div>
         <div className="story-grid">
-          <h2>
-            Good design
-            <br />
-            doesn’t <span>stand still.</span>
+          <h2 aria-label="Good design doesn’t stand still.">
+            <span className="story-line-mask" aria-hidden="true">
+              <span className="story-title-line">Good design</span>
+            </span>
+            <span className="story-line-mask" aria-hidden="true">
+              <span className="story-title-line">
+                doesn’t <em className="story-accent">stand still.</em>
+              </span>
+            </span>
           </h2>
           <div className="story-copy">
             <p>
@@ -461,8 +468,33 @@ export function DriveExperience() {
             </button>
           </div>
         </div>
+        <div className="motion-ribbon" aria-hidden="true">
+          <div className="ribbon-track ribbon-forward">
+            {Array.from({ length: 3 }, (_, index) => (
+              <span key={index}>
+                LESS FRICTION. <span className="ribbon-spark">✳</span>
+              </span>
+            ))}
+          </div>
+          <div className="ribbon-track ribbon-reverse">
+            {Array.from({ length: 3 }, (_, index) => (
+              <span key={index}>
+                MORE FEELING. <span className="ribbon-spark">↗</span>
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="principles grid grid-cols-1 md:grid-cols-3">
-          <div>
+          <div className="principles-rule" aria-hidden="true" />
+          <div className="principle-card" data-motion="orbit">
+            <div className="principle-graphic orbit-graphic" aria-hidden="true">
+              <div className="orbit-ring" />
+              <div className="orbit-core">✳</div>
+              <div className="orbit-arm">
+                <span />
+              </div>
+              <span className="graphic-caption">EVERY DETAIL, IN ORBIT</span>
+            </div>
             <span className="eyebrow">01 — INTENTION</span>
             <h3>Nothing moves by accident.</h3>
             <p>
@@ -470,7 +502,13 @@ export function DriveExperience() {
               room to breathe.
             </p>
           </div>
-          <div>
+          <div className="principle-card" data-motion="flow">
+            <div className="principle-graphic flow-graphic" aria-hidden="true">
+              {[0, 1, 2].map((index) => (
+                <Arrow className="flow-arrow" key={index} />
+              ))}
+              <span className="graphic-caption">FIND YOUR FLOW</span>
+            </div>
             <span className="eyebrow">02 — CONNECTION</span>
             <h3>You set the rhythm.</h3>
             <p>
@@ -478,7 +516,16 @@ export function DriveExperience() {
               Always reversible.
             </p>
           </div>
-          <div>
+          <div className="principle-card" data-motion="balance">
+            <div
+              className="principle-graphic balance-graphic"
+              aria-hidden="true"
+            >
+              <span className="balance-bar" />
+              <span className="balance-bar" />
+              <span className="balance-bar" />
+              <span className="graphic-caption">ROOM FOR EVERY RHYTHM</span>
+            </div>
             <span className="eyebrow">03 — CONSIDERATION</span>
             <h3>A good ride, for everyone.</h3>
             <p>

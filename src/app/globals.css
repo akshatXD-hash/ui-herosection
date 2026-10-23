@@ -526,7 +526,7 @@ a:focus-visible {
   line-height: 1.1;
   letter-spacing: -0.055em;
 }
-.story-grid h2 span {
+.story-grid h2 .story-accent {
   font-family: Georgia, serif;
   font-style: italic;
   color: var(--lime);
@@ -557,10 +557,144 @@ a:focus-visible {
   transform: translate(3px, -3px);
 }
 .principles {
+  position: relative;
   margin-top: 60px;
-  border-top: 1px solid #4a5143;
   padding-top: 30px;
   gap: 50px;
+}
+.story-line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.13em;
+  margin-bottom: -0.13em;
+}
+.story-title-line {
+  display: block;
+  transform-origin: left bottom;
+}
+.motion-ribbon {
+  overflow: hidden;
+  margin: 64px -7.5vw 0;
+  padding: 26px 0 32px;
+  background: var(--lime);
+  color: var(--ink);
+}
+.ribbon-track {
+  display: flex;
+  width: max-content;
+  gap: 0.3em;
+  font-size: clamp(52px, 8vw, 132px);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+.ribbon-track > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  white-space: nowrap;
+}
+.ribbon-reverse {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink);
+}
+.ribbon-spark {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.75em;
+}
+.principles-rule {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #758363;
+}
+.principle-graphic {
+  height: 150px;
+  margin-bottom: 22px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #48513e;
+  border-radius: 3px;
+  color: var(--lime);
+  background: #2b3328;
+}
+.graphic-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  font: 7px monospace;
+  letter-spacing: 1px;
+  color: #a8b59a;
+}
+.orbit-ring {
+  width: 88px;
+  height: 88px;
+  border: 1px solid #788963;
+  border-radius: 50%;
+  transform: translateY(-9px);
+}
+.orbit-core {
+  position: absolute;
+  top: 33px;
+  font-size: 42px;
+  line-height: 1;
+}
+.orbit-arm {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  top: 22px;
+}
+.orbit-arm > span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lime);
+  left: 39px;
+  top: -5px;
+}
+.flow-graphic {
+  gap: 10px;
+  padding-bottom: 18px;
+}
+.flow-arrow {
+  width: 42px;
+  height: 42px;
+}
+.flow-arrow:nth-child(2) {
+  opacity: 0.65;
+}
+.flow-arrow:nth-child(3) {
+  opacity: 0.35;
+}
+.balance-graphic {
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 30px 38px;
+  align-items: flex-start;
+}
+.balance-bar {
+  display: block;
+  height: 8px;
+  width: 100%;
+  background: var(--lime);
+  border-radius: 5px;
+  transform-origin: left;
+}
+.balance-bar:nth-child(2) {
+  width: 76%;
+  opacity: 0.65;
+}
+.balance-bar:nth-child(3) {
+  width: 52%;
+  opacity: 0.35;
 }
 .principles .eyebrow {
   color: #9ca98b;
@@ -949,6 +1083,14 @@ a:focus-visible {
     margin-top: 40px;
     gap: 28px;
     padding-top: 28px;
+  }
+  .motion-ribbon {
+    margin: 40px -7vw 0;
+    padding-block: 20px;
+  }
+  .principle-graphic {
+    height: 150px;
+    margin-bottom: 18px;
   }
   .principles h3 {
     margin-top: 10px;
